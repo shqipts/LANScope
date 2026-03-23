@@ -136,11 +136,11 @@ Already implemented:
 - unsigned IPA packaging flow
 
 Still worth improving:
-- stronger vendor/device fingerprinting
-- better router / TV / printer classification
-- manual subnet/range scanning
-- favorites / history UI
-- signed export / distribution workflow
+- richer device fingerprinting and service-based identification
+- stronger router, TV, printer, NAS, and smart-device classification
+- manual subnet and custom IP-range scanning
+- favorites, scan history, and saved hosts
+- signed export and distribution workflow
 
 ---
 
