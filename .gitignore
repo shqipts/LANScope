@@ -1,0 +1,21 @@
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+
+# App build artifacts
+build-artifacts/
+*.ipa
+
+# macOS
+.DS_Store
+
+# SwiftPM
+.build/
+
+# Fastlane / misc
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
