@@ -18,6 +18,31 @@ It is designed as a modern iOS alternative to classic network utility apps, with
 
 ---
 
+## Highlights
+
+- native SwiftUI iOS app
+- stronger default LAN scanner
+- Bonjour / mDNS integration
+- host caching and repeat-scan merge behavior
+- first-launch permission onboarding
+- host detail pages and export/share flow
+- unsigned IPA release artifact for testing/reference
+
+---
+
+## Screenshots
+
+### Info
+![LANScope Info Tab](docs/images/info-tab.jpg)
+
+### LAN
+![LANScope LAN Tab](docs/images/lan-tab.jpg)
+
+### Tools
+![LANScope Tools Tab](docs/images/tools-tab.jpg)
+
+---
+
 ## Features
 
 ### Info tab
@@ -52,20 +77,6 @@ It is designed as a modern iOS alternative to classic network utility apps, with
 - first-launch permission onboarding
 - Location prompt flow for SSID/BSSID access
 - Local Network prompt flow for LAN discovery
-
----
-
-## Screenshots / Demo
-
-Project screenshot/demo assets can be placed in:
-
-- `docs/images/`
-
-Suggested future additions:
-- Info tab screenshot
-- LAN tab screenshot
-- Tools tab screenshot
-- short demo GIF/video
 
 ---
 
@@ -115,7 +126,7 @@ A release artifact is also attached on GitHub Releases.
 - `LANScope/Services/` — network, discovery, cache, permission services
 - `LANScope/ViewModels/` — UI state and orchestration
 - `LANScope/Views/` — screens and reusable SwiftUI components
-- `docs/` — release/process docs and future screenshots
+- `docs/` — release/process docs and screenshots
 
 ---
 
@@ -143,9 +154,7 @@ Still worth improving:
 
 ## Releases
 
-See:
-
-- GitHub Releases for tagged builds and unsigned IPA artifacts
+See GitHub Releases for tagged builds and unsigned IPA artifacts.
 
 Release/process notes:
 
