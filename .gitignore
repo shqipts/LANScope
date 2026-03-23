@@ -3,6 +3,8 @@ DerivedData/
 build/
 *.xcuserstate
 xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
 
 # App build artifacts
 build-artifacts/

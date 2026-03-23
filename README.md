@@ -10,7 +10,7 @@ LANScope is a native SwiftUI iOS network utility app focused on:
 
 ## Current status
 
-This project is an MVP with a private GitHub release flow.
+This project is an MVP with a public GitHub repository and release flow.
 It currently supports:
 
 - Info tab with Wi‑Fi, external IP, gateway, DNS, and limited cellular info
@@ -68,3 +68,4 @@ GitHub Release:
 - manual subnet/range scanning
 - favorites/history UI
 - signed ad hoc build/export flow
+ow
