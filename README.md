@@ -1,71 +1,158 @@
 # LANScope
 
-LANScope is a native SwiftUI iOS network utility app focused on:
+![Platform](https://img.shields.io/badge/platform-iOS-0A84FF)
+![Swift](https://img.shields.io/badge/Swift-5-orange)
+![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-blueviolet)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-- Wi‑Fi / network info
-- LAN device discovery
+LANScope is a native SwiftUI iOS network utility app for inspecting your current network connection, discovering devices on your LAN, and running practical network tools from an iPhone.
+
+It is designed as a modern iOS alternative to classic network utility apps, with a focus on:
+
+- Wi‑Fi and connection info
+- LAN discovery
 - Bonjour / mDNS discovery
-- host details and open ports
-- ping / DNS / WHOIS / port scan tools
+- host details and port visibility
+- DNS / WHOIS / reachability tools
+- a clean, mobile-first UI
 
-## Current status
+---
 
-This project is an MVP with a public GitHub repository and release flow.
-It currently supports:
+## Features
 
-- Info tab with Wi‑Fi, external IP, gateway, DNS, and limited cellular info
-- LAN tab with one strong default scanner
-- host source badges: `PORT`, `BONJOUR`, `BOTH`, `CACHED`
-- repeated-scan merge and recent-host caching
-- Tools tab with ping, DNS, WHOIS/RDAP, and configurable port scan
-- first-launch onboarding for permissions
+### Info tab
+- local IP address
+- subnet mask
+- gateway
+- external IP
+- DNS summary
+- SSID / BSSID when iOS allows it
+- limited cellular / mobile data info
 
-## Permissions used
+### LAN tab
+- stronger default LAN scan
+- Bonjour / mDNS discovery
+- host source badges:
+  - `PORT`
+  - `BONJOUR`
+  - `BOTH`
+  - `CACHED`
+- repeated-scan merge behavior
+- recent host caching
+- host detail screen
+- export/share scan results
 
-The app needs:
+### Tools tab
+- ping-style reachability test
+- DNS lookup
+- WHOIS / RDAP lookup
+- port scan with custom ports/ranges
 
-- **Local Network** — for LAN scanning and Bonjour discovery
-- **Location When In Use** — for SSID/BSSID access on iOS
+### Onboarding / permissions
+- first-launch permission onboarding
+- Location prompt flow for SSID/BSSID access
+- Local Network prompt flow for LAN discovery
 
-The app does **not** need:
+---
+
+## Screenshots / Demo
+
+Project screenshot/demo assets can be placed in:
+
+- `docs/images/`
+
+Suggested future additions:
+- Info tab screenshot
+- LAN tab screenshot
+- Tools tab screenshot
+- short demo GIF/video
+
+---
+
+## Permissions
+
+LANScope needs only the permissions required for its networking features:
+
+- **Local Network** — required for LAN scanning and Bonjour discovery
+- **Location When In Use** — required by iOS for SSID / BSSID access
+
+LANScope does **not** require:
 
 - Contacts
 - Photos
-- Microphone
 - Camera
+- Microphone
 - Bluetooth
 
-## Build notes
+---
 
-### Local Xcode build
+## Build
 
-Open:
-- `LANScope.xcodeproj`
-
-Target:
+### Requirements
+- Xcode
 - iOS 26.0+
 
-### Unsigned IPA artifact
+### Local build
+Open:
 
-Local artifact path:
+- `LANScope.xcodeproj`
+
+Then build/run from Xcode.
+
+### Unsigned IPA artifact
+Local output path:
+
 - `build-artifacts/LANScope-unsigned.ipa`
 
-GitHub Release:
-- attached to the private repo release
+A release artifact is also attached on GitHub Releases.
+
+---
 
 ## Project structure
 
-- `LANScope/App/` — app entry and root navigation
-- `LANScope/Models/` — app models
-- `LANScope/Services/` — network, discovery, permissions, cache
-- `LANScope/ViewModels/` — UI state
-- `LANScope/Views/` — screens and reusable components
+- `LANScope/App/` — app entry and root tabs
+- `LANScope/Models/` — data models
+- `LANScope/Services/` — network, discovery, cache, permission services
+- `LANScope/ViewModels/` — UI state and orchestration
+- `LANScope/Views/` — screens and reusable SwiftUI components
+- `docs/` — release/process docs and future screenshots
 
-## Future improvements
+---
 
-- stronger vendor fingerprinting
-- better router/device classification
+## Current status
+
+LANScope is currently an actively iterated MVP.
+
+Already implemented:
+- SwiftUI app structure
+- Info / LAN / Tools tabs
+- stronger default LAN scanner
+- Bonjour discovery integration
+- host caching / merge logic
+- onboarding for required permissions
+- unsigned IPA packaging flow
+
+Still worth improving:
+- stronger vendor/device fingerprinting
+- better router / TV / printer classification
 - manual subnet/range scanning
-- favorites/history UI
-- signed ad hoc build/export flow
-ow
+- favorites / history UI
+- signed export / distribution workflow
+
+---
+
+## Releases
+
+See:
+
+- GitHub Releases for tagged builds and unsigned IPA artifacts
+
+Release/process notes:
+
+- `docs/RELEASE.md`
+
+---
+
+## License
+
+MIT — see `LICENSE`.
