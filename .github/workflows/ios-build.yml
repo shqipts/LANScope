@@ -1,0 +1,44 @@
+name: ios-build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Build unsigned app
+        run: |
+          xcodebuild \
+            -project LANScope.xcodeproj \
+            -scheme LANScope \
+            -configuration Debug \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY='' \
+            build
+
+      - name: Package unsigned IPA-style artifact
+        run: |
+          APP=$(find ~/Library/Developer/Xcode/DerivedData -path '*Build/Products/Debug-iphoneos/LANScope.app' | head -n 1)
+          mkdir -p build-artifacts/unsigned-ipa/Payload
+          cp -R "$APP" build-artifacts/unsigned-ipa/Payload/
+          cd build-artifacts/unsigned-ipa
+          zip -qry ../LANScope-unsigned.zip Payload
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LANScope-unsigned-artifact
+          path: build-artifacts/LANScope-unsigned.zip
