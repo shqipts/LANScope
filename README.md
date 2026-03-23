@@ -87,14 +87,6 @@ LANScope needs only the permissions required for its networking features:
 - **Local Network** — required for LAN scanning and Bonjour discovery
 - **Location When In Use** — required by iOS for SSID / BSSID access
 
-LANScope does **not** require:
-
-- Contacts
-- Photos
-- Camera
-- Microphone
-- Bluetooth
-
 ---
 
 ## Build
